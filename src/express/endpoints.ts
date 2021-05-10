@@ -6,7 +6,7 @@ import * as classes from "../data/classes.json";
 export const addQuote: RequestHandler = async (req, res) => {
     const secret_key = process.env.RECAPTCHA_KEY;
     const token = req.body.recaptchaToken;
-    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${token}`;
+    const url = process.env.RECAPTCHA_BASE_URL + `/siteverify?secret=${secret_key}&response=${token}`;
     let response = await nodeFetch(url, {
         method: 'post'
     });
@@ -56,7 +56,8 @@ export const renderAll: RequestHandler = async (req, res) => {
     }).slice(0,5);
 
     res.render("all", {
-        quotes: quotes
+        quotes: quotes,
+        BASE_URL: process.env.BASE_URL
     });
 };
 
