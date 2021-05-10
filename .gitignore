@@ -108,4 +108,5 @@ src/data/classes.json
 
 # macOS files
 .DS_Store
-src/data/list.json
+
+src/data/members.json
