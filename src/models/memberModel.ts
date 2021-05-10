@@ -10,6 +10,9 @@ const memberScheme = new mongoose.Schema({
   uniqueId: {
     type: String
   },
+  signature: {
+    type: String
+  },
   payload: {
     type: String
   }
