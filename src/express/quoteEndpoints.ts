@@ -60,7 +60,3 @@ export const renderAll: RequestHandler = async (req, res) => {
         BASE_URL: process.env.BASE_URL
     });
 };
-
-export const renderOverview: RequestHandler = async (req, res) => {
-    res.render("overview");
-};
